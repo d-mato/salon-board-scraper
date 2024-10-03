@@ -18,6 +18,7 @@
   },
   "scripts": {
     "start": "npm run start:dev",
+    "start:dev": "tsx src/main.ts",
     "start:prod": "node dist/main.js",
     "build": "tsc"
   },
