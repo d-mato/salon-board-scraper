@@ -1,0 +1,7 @@
+{
+  "actorSpecification": 1,
+  "name": "salon-board-scraper",
+  "version": "0.0.1",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile"
+}

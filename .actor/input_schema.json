@@ -1,0 +1,26 @@
+{
+  "title": "PuppeteerCrawler Template",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "userId": {
+      "title": "ユーザーID",
+      "type": "string",
+      "description": "",
+      "editor": "textfield"
+    },
+    "password": {
+      "title": "パスワード",
+      "type": "string",
+      "description": "",
+      "editor": "textfield"
+    },
+    "reserveId": {
+      "title": "予約ID",
+      "type": "string",
+      "description": "",
+      "editor": "textfield"
+    }
+  },
+  "required": ["userId", "password", "reserveId"]
+}
