@@ -123,9 +123,11 @@ async function login(page: Page, input: Input) {
   logger.info(`opening ${url}`);
   await page.goto(url, { timeout: 30000 });
 
-  if ((await page.title()) !== "ログイン：SALON BOARD") {
-    throw new Error("Failed to open login page");
-  }
+  await page.title().then(async (title) => {
+    if (title !== "ログイン：SALON BOARD") {
+      await Actor.fail(`Failed to open login page. title: ${title}`);
+    }
+  });
 
   await page.fill("[name='userId']", input.userId);
   await page.fill("[name='password']", input.password);
@@ -140,9 +142,11 @@ async function login(page: Page, input: Input) {
     //
   ]);
 
-  if ((await page.title()) !== "SALON BOARD : TOP") {
-    throw new Error("Login failed");
-  }
+  await page.title().then(async (title) => {
+    if (title !== "SALON BOARD : TOP") {
+      await Actor.fail(`Failed to login. title: ${title}`);
+    }
+  });
 
   await playwrightUtils.saveSnapshot(page, {
     key: "login-result",
